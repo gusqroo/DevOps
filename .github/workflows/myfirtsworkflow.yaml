@@ -1,0 +1,21 @@
+name: My Cool Workflow
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+    myfirtsjob:
+              name: Firts job
+              runs-on: ubuntu-latest
+              steps:
+              - name: Steap One
+                uses: actions/checkout@v3
+              - name: Steap Two
+                run: |
+                  touch newfile.yaml
+                  echo "Please Alex is Friday let me escape" >> newfile.yaml
+                  cat newfile.yaml
+                  pwd
+              
+  
