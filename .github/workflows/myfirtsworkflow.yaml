@@ -5,7 +5,7 @@ on:
   pull_request:
   workflow_dispatch:
 jobs:
-    myfirtsjob:
+      myfirtsjob:
               name: Firts job
               runs-on: ubuntu-latest
               steps:
@@ -16,17 +16,17 @@ jobs:
                   touch newfile.yaml
                   echo "Please Alex is Friday let me escape" >> newfile.yaml
                   cat newfile.yaml
-                  pwd
-    mysecondjob:
+                  pwd 
+      mysecondjob:
                 needs: [myfirtsjob]
                 name: Second Job
-                run-ons: macos-latest
+                runs-on: macos-latest
                 steps:
                 - name: Step One
                   run: date
-    mythirdjob:
+      mythirdjob:
                 name: Third Job
-                run-ons: windows-latest
+                runs-on: windows-latest
                 steps:
                 - name: Step One
                   run: date
