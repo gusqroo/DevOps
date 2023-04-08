@@ -83,10 +83,10 @@ To use this project, you'll need to have `docker-compose` 🐳 installed on your
 
 ## Services 📦
 
-### hello-wolrd-app 🌎
+### hello-wolrd-app 🌎💻
 This is a container 🐳 hosting a basic React app created with `create-react-app`. It runs on port `3000`, so you can access it by going to `http://localhost:3000` in your web browser.
 
-### ansible_controller 🤖
+### ansible_controller 🤖🧠
 This is a container 🐳 used as an Ansible controller. It has Ansible installed so we can perform changes to the `app.js` file when the Docker container hosting our app is running. This allows us to update the app without having to rebuild the Docker image.
 
 ## Usage 🔧
@@ -113,8 +113,6 @@ ansible-playbook -i inventory.ini playbook.yml
 ```
 This will run the Ansible playbook and make changes to the `app.js` file in the `hello-wolrd-app` service.
 
-👤 **Librado Hernandez**
+👨‍💻 **Librado Hernandez** 💻 
 
-- 📧 [Email](mailto:librado.cruzmx@gmail.com)
-- 🔗 [GitHub](https://github.com/libradito)
-- 💼 [LinkedIn](https://www.linkedin.com/in/librado-dev/)
+- 📧 [Email](mailto:librado.cruzmx@gmail.com) - 🔗 [GitHub](https://github.com/libradito) - 💼 [LinkedIn](https://www.linkedin.com/in/librado-dev/)
