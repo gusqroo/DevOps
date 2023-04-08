@@ -1,7 +1,7 @@
 # Use an official Ubuntu runtime as the base image
 FROM ubuntu
 
-# Update the package list and install dependencies
+# Update the package list and install dependencies necessary for the app
 RUN apt-get update -y \
     && apt-get upgrade -y \
     && apt-get install -y \
