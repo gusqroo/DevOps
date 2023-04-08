@@ -30,11 +30,16 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+    - name: Set up environment variables
+      run: echo "VERSION_NUMBER=$((${{ env.VERSION_NUMBER }} + 1))" >> $GITHUB_ENV
     - name: Push to Docker Hub
       if: success()
       uses: docker/build-push-action@v4
       with:
         context: ./capstone_project/hello-world
         push: true
-        tags: libradoz/itj-react-app:${{ github.sha }}
+        tags: |
+          libradoz/itj-react-app:${{ github.sha }}
+          libradoz/itj-react-app:version:${{ env.VERSION_NUMBER }}
+          libradoz/itj-react-app:latest
        
