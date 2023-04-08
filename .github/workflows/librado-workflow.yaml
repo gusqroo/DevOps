@@ -39,7 +39,7 @@ jobs:
         context: ./capstone_project/hello-world
         push: true
         tags: |
-          libradoz/itj-react-app:${{ github.sha }}
-          libradoz/itj-react-app:version:${{ env.VERSION_NUMBER }}
-          libradoz/itj-react-app:latest
+          ***/libradoz/itj-react-app:${{ github.sha }}
+          ***/libradoz/itj-react-app:version:${{ env.VERSION_NUMBER }}
+          ***/libradoz/itj-react-app:latest
        
