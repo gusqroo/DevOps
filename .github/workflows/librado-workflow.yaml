@@ -1,5 +1,11 @@
 name: build-docker-image
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - "librado-dev"
+  pull_request:
+    branches:
+      - "librado-dev"
 jobs:
   build:
     runs-on: ubuntu-latest
