@@ -36,6 +36,5 @@ jobs:
       with:
         context: ./capstone_project/hello-world
         push: true
-        tags: my-dockerhub-username/itj-react-app:${{ github.sha }}
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+        tags: libradoz/itj-react-app:${{ github.sha }}
+       
