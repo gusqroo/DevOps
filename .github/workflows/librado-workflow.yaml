@@ -28,7 +28,7 @@ jobs:
       if: success()
       run: |
         docker build -t ITJ-react-app .
-      working-directory: /capstone_project/hello-world
+      working-directory: ./capstone_project/hello-world
     - name: Push to Docker Hub
       if: success()
       uses: docker/build-push-action@v4
