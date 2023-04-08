@@ -1,0 +1,13 @@
+---
+- name: Ansible Play for app containers
+  hosts: all
+  become: true
+  tasks:
+    - name: Ping Test to verify conectivity
+      ansible.builtin.ping:
+    - name: Replace "Hello World!" with "Hello DevOps!" in app.js
+      lineinfile:
+        path: /app/src/App.js
+        regexp: 'Hello World!'
+        line: 'Hello DevOps!'
+        state: present
