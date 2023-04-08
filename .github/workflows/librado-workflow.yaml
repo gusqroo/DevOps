@@ -17,3 +17,4 @@ jobs:
       working-directory: /capstone_project/hello-world
     - name: Run tests
       run: npm test
+      working-directory: /capstone_project/hello-world
