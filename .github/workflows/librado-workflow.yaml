@@ -27,7 +27,7 @@ jobs:
     - name: Build container
       if: success()
       run: |
-        docker build -t ITJ-react-app .
+        docker build -t itj-react-app .
       working-directory: ./capstone_project/hello-world
     - name: Push to Docker Hub
       if: success()
@@ -35,6 +35,6 @@ jobs:
       with:
         context: .
         push: true
-        tags: my-dockerhub-username/ITJ-react-app:${{ github.sha }}
+        tags: my-dockerhub-username/itj-react-app:${{ github.sha }}
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
