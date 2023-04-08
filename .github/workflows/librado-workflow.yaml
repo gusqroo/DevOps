@@ -24,3 +24,17 @@ jobs:
     - name: Run tests
       run: npm test
       working-directory: ./capstone_project/hello-world
+    - name: Build container
+      if: success()
+      run: |
+        docker build -t ITJ-react-app .
+      working-directory: /capstone_project/hello-world
+    - name: Push to Docker Hub
+      if: success()
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: true
+        tags: my-dockerhub-username/ITJ-react-app:${{ github.sha }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
