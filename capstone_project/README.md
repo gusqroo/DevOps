@@ -71,3 +71,50 @@ NOTE: From here on, whenever we say repository , that refers to your forked repo
 ## 4. Update "Hello World!" to "Hello DevOps!"
 - Update the node js application to display "Hello DevOps!" instead of "Hello World!" using ansible.
 
+
+
+# Capstone Resume 🚀
+
+This project uses `docker-compose` 🐳 to set up and run two services: `hello-wolrd-app` and `ansible_controller`.
+
+## Prerequisites 📋
+
+To use this project, you'll need to have `docker-compose` 🐳 installed on your machine.
+
+## Services 📦
+
+### hello-wolrd-app 🌎
+This is a container 🐳 hosting a basic React app created with `create-react-app`. It runs on port `3000`, so you can access it by going to `http://localhost:3000` in your web browser.
+
+### ansible_controller 🤖
+This is a container 🐳 used as an Ansible controller. It has Ansible installed so we can perform changes to the `app.js` file when the Docker container hosting our app is running. This allows us to update the app without having to rebuild the Docker image.
+
+## Usage 🔧
+
+To use this project, you'll need to have `docker-compose` 🐳 installed on your machine.
+
+1. Start the `docker-compose` by running the following command in one terminal:
+```sh
+docker compose up 
+```
+
+This will start both the `hello-wolrd-app` and `ansible_controller` services.
+
+In a different terminal, access the `ansible_controller` container by running:
+
+```sh
+docker exec -w /home/ansible_controller/ansible_files/ -ti ansible_controller bash
+```
+This will open a bash shell inside the `ansible_controller` container.
+
+Then, run the Ansible playbook with:
+```sh
+ansible-playbook -i inventory.ini playbook.yml
+```
+This will run the Ansible playbook and make changes to the `app.js` file in the `hello-wolrd-app` service.
+
+👤 **Librado Hernandez**
+
+- 📧 [Email](mailto:librado.cruzmx@gmail.com)
+- 🔗 [GitHub](https://github.com/libradito)
+- 💼 [LinkedIn](https://www.linkedin.com/in/librado-dev/)
