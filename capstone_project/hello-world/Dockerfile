@@ -30,4 +30,4 @@ RUN useradd -rm -d /home/react-container -s /bin/bash -g root -G sudo -u 1001 re
     && mkdir -p /home/react-container/.ssh
 
 # Start ssh service and React app, and keep container running
-CMD service ssh start && npm start & tail -f /dev/null
+CMD service ssh start && npm start

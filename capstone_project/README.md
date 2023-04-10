@@ -73,21 +73,48 @@ NOTE: From here on, whenever we say repository , that refers to your forked repo
 
 
 
-# Capstone Resume 🚀
+Capstone Resume 🚀
+==================
 
-This project uses `docker-compose` 🐳 to set up and run two services: `hello-wolrd-app` and `ansible_controller`.
+-   There is two ways to controll the docker container:
+    -   Using ansible in your local machine
+    -   Using `Docker-compose` 
+
+1\. Using ansible in your `local computer`
+------------------------------------------
+
+ - ### 1 - When running the container expose port 22:
+
+
+```sh
+  docker run -d -p 22:22 -p 3000:3000 libradoz/react-app
+```
+
+ - ### 2 - Make sure you have install `sshpass` on your local computer 💻
+
+ - ### 3 - using your teminal go to the `ansible_files` directory
+
+ - ### 4 - Make some changes to the ansible inventory.ini especify localhost and ansible_port it will look like this:
+    
+  ```[target1]
+  localhost ansible_user=react-container ansible_password=12345 ansible_port=22
+  ```
+    
+1\. Using ansible in your `local computer`
+------------------------------------------
+  - This project uses `docker-compose` 🐳 to set up and run two services: `hello-wolrd-app` and `ansible_controller`.
 
 ## Prerequisites 📋
 
-To use this project, you'll need to have `docker-compose` 🐳 installed on your machine.
+  - To use this project, you'll need to have `docker-compose` 🐳 installed on your machine.
 
 ## Services 📦
 
 ### hello-wolrd-app 🌎💻
-This is a container 🐳 hosting a basic React app created with `create-react-app`. It runs on port `3000`, so you can access it by going to `http://localhost:3000` in your web browser.
+  - This is a container 🐳 hosting a basic React app created with `create-react-app`. It runs on port `3000`, so you can access it by going to `http://localhost:3000` in your web browser.
 
 ### ansible_controller 🤖🧠
-This is a container 🐳 used as an Ansible controller. It has Ansible installed so we can perform changes to the `app.js` file when the Docker container hosting our app is running. This allows us to update the app without having to rebuild the Docker image.
+  - This is a container 🐳 used as an Ansible controller. It has Ansible installed so we can perform changes to the `app.js` file when the Docker container hosting our app is running. This allows us to update the app without having to rebuild the Docker image.
 
 ## Usage 🔧
 
