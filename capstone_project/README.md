@@ -94,7 +94,7 @@ Capstone Resume 🚀
 
  - ### 3 - using your teminal go to the `ansible_files` directory
 
- - ### 4 - Make some changes to the ansible inventory.ini especify localhost and ansible_port it will look like this:
+ - ### 4 - Make some changes to the ansible inventory.ini add localhost and ansible_port it will look like this:
     
   ```[target1]
   localhost ansible_user=react-container ansible_password=12345 ansible_port=22
